@@ -28,6 +28,24 @@
       {
         "rule_set": "geosite-geolocation-cn",
         "server": "local"
+      },
+      {
+        "clash_mode": "Rule",
+        "server": "default"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "local"
       }
     ],
     "strategy": "ipv4_only"
@@ -452,7 +470,6 @@
         "🇺🇸 US 355",
         "🇺🇸 US 357",
         "🇺🇸 US 360",
-        "🇺🇸 US 361",
         "🇺🇸 US 362",
         "🇺🇸 US 363",
         "🇺🇸 US 364",
@@ -3976,21 +3993,6 @@
       "password": "KixLvKzwjekG00rm"
     },
     {
-      "type": "vless",
-      "tag": "🇺🇸 US 361",
-      "server": "shaliest.toptechnonews.com",
-      "server_port": 443,
-      "uuid": "ff3c4db3-2259-479e-a0e0-7af7d1d429db",
-      "tls": {
-        "enabled": true,
-        "server_name": "shaliest.toptechnonews.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/nimws"
-      }
-    },
-    {
       "type": "shadowsocks",
       "tag": "🇺🇸 US 362",
       "server": "23.157.40.103",
@@ -5747,10 +5749,12 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "cache_id": "final"
+      "cache_id": "final",
+      "store_rdrc": true
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:9090"
+      "external_controller": "127.0.0.1:9090",
+      "default_mode": "Leak"
     }
   }
 }
