@@ -556,6 +556,7 @@
         "🇳🇱 NL 1",
         "🇳🇱 NL 2",
         "🇳🇱 NL 3",
+        "🇳🇱 NL 4",
         "🇳🇱 NL 5",
         "🇳🇱 NL 6",
         "🇳🇱 NL 7",
@@ -4747,6 +4748,13 @@
       "server_port": 443,
       "method": "aes-128-cfb",
       "password": "shadowsocks"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 NL 4",
+      "server": "nl2.mcinet.xyz",
+      "server_port": 2729,
+      "uuid": "b20dfbe2-2269-418f-9deb-df02fef4e4fc"
     },
     {
       "type": "vmess",
