@@ -470,6 +470,7 @@
         "🇺🇸 US 355",
         "🇺🇸 US 357",
         "🇺🇸 US 360",
+        "🇺🇸 US 361",
         "🇺🇸 US 362",
         "🇺🇸 US 363",
         "🇺🇸 US 364",
@@ -3992,6 +3993,21 @@
       "server_port": 5500,
       "method": "aes-256-gcm",
       "password": "KixLvKzwjekG00rm"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 US 361",
+      "server": "shaliest.toptechnonews.com",
+      "server_port": 443,
+      "uuid": "ff3c4db3-2259-479e-a0e0-7af7d1d429db",
+      "tls": {
+        "enabled": true,
+        "server_name": "shaliest.toptechnonews.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nimws"
+      }
     },
     {
       "type": "shadowsocks",
