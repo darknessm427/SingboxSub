@@ -60,7 +60,7 @@
   ],
   "profiles": [
     {
-      "name": "servers.json",
+      "name": "servers",
       "template": "breakfree",
       "subscription": [
         "azadi",
