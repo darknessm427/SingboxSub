@@ -3,8 +3,6 @@ export GOPROXY="https://proxy.golang.org,direct" GOAMD64='v3'
 export output="final.json"
 export py_script=".github/sing-box.py"
 
-sudo apt update && sudo apt install jq -y
-
 function exp() {
 	python ${py_script} ${output} templates/template-${1}.json release/Sing-Box/${1}-lite.json
 	python ${py_script} ${output} templates/template-${1}-sfw.json release/Sing-Box/${1}-sfw-lite.json
