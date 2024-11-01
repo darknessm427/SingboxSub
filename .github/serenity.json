@@ -34,7 +34,7 @@
       "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
     },
     {
-      "name": "final",
+      "name": "final.json",
       "url": "http://127.0.0.1:6789/servers",
       "update_interval": "5m0s",
       "process": {
@@ -73,7 +73,7 @@
     {
       "name": "final.json",
       "template": "breakfree",
-      "subscription": "final"
+      "subscription": "final.json"
     }
   ]
 }
