@@ -2,7 +2,7 @@
   "log": {
     "level": "debug"
   },
-  "listen": "127.0.0.1:6789",
+  "listen": "127.0.0.1:8080",
   "cache_file": ".github/serenity.db",
   "outbounds": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "final.json",
-      "url": "http://127.0.0.1:6789/servers",
+      "url": "http://127.0.0.1:8080/servers",
       "update_interval": "5m0s",
       "process": {
         "filter_type": [
