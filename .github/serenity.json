@@ -50,7 +50,7 @@
           "padding": true
         }
       },
-      "deduplication": true
+      "deduplication": false
     }
   ],
   "templates": [
