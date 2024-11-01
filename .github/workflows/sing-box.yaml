@@ -1,7 +1,5 @@
 on:
   workflow_dispatch:
-  push:
-    branches: ${{ github.ref }}
   schedule:
   - cron: "0 0 * * *"
 
