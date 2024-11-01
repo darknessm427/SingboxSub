@@ -12,7 +12,7 @@ function exp() {
 
 git clone https://github.com/SagerNet/serenity
 cd serenity && make install 2> /dev/null && cd ..
-serenity -c serenity.json run &
+serenity -c ".github/serenity.json" run &
 
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && git checkout main-next && make install 2> /dev/null && cd ..
