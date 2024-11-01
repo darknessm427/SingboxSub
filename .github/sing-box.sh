@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 export GOPROXY="https://proxy.golang.org,direct" GOAMD64='v3'
-export output="final.json"
+export output="final"
 export py_script=".github/sing-box.py"
 
 function exp() {
-	python ${py_script} ${output} templates/template-${1}.json release/Sing-Box/${1}-lite.json
-	python ${py_script} ${output} templates/template-${1}-sfw.json release/Sing-Box/${1}-sfw-lite.json
-	python ${py_script} ${output} templates/template-${1}-notun.json release/Sing-Box/${1}-lite-notun.json
-	python ${py_script} ${output} templates/template-${1}-sfw-notun.json release/Sing-Box/${1}-sfw-lite-notun.json
+	python ${py_script} ${output}.json templates/template-${1}.json release/Sing-Box/${1}-lite.json
+	python ${py_script} ${output}.json templates/template-${1}-sfw.json release/Sing-Box/${1}-sfw-lite.json
+	python ${py_script} ${output}.json templates/template-${1}-notun.json release/Sing-Box/${1}-lite-notun.json
+	python ${py_script} ${output}.json templates/template-${1}-sfw-notun.json release/Sing-Box/${1}-sfw-lite-notun.json
 }
 
 git clone https://github.com/SagerNet/serenity
@@ -17,11 +17,11 @@ serenity -c ".github/serenity.json" run &
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && git checkout main-next && make install 2> /dev/null && cd ..
 
-sleep 60s; curl -fsSL http://127.0.0.1:8080/${output} | jq -Sc > ${output} || echo "CURL FAILED!"
+sleep 60s; curl -fsSL http://127.0.0.1:8080/${output} | jq -Sc > ${output}.json || echo "CURL FAILED!"
 
 #quick-fix
-sed -i s/\;mux\=true//g ${output}
-sed -i s/mux\=true\;//g ${output}
+sed -i s/\;mux\=true//g ${output}.json
+sed -i s/mux\=true\;//g ${output}.json
 
 exp cn && echo "CN files exported!"
 exp ir && echo "IR files exported!"
