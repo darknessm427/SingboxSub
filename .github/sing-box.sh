@@ -17,7 +17,7 @@ serenity -c ".github/serenity.json" run &
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && git checkout main-next && make install 2> /dev/null && cd ..
 
-curl -fsSL http://localhost:6789/${output} | jq -Sc > ${output}
+curl -fsSL http://127.0.0.1:8080/${output} | jq -Sc > ${output} || echo "CURL FAILED!"
 
 #quick-fix
 sed -i s/\;mux\=true//g ${output}
