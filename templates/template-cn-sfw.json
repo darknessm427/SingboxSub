@@ -55,18 +55,6 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "exclude_package": [
-        "com.android.captiveportallogin",
-        "com.biglybt.android.client",
-        "com.bittorrent.client",
-        "com.utorrent.client",
-        "net.i2p.android.router",
-        "org.openobservatory.ooniprobe",
-        "org.proninyaroslav.libretorrent",
-        "org.purplei2p.i2pd",
-        "org.torproject.android",
-        "org.torproject.torbrowser"
-      ],
       "gso": true,
       "platform": {
         "http_proxy": {
@@ -76,7 +64,8 @@
         }
       },
       "route_exclude_address": [
-        "192.168.0.0/16"
+        "192.168.0.0/16",
+        "fc00::/7"
       ],
       "route_exclude_address_set": [
         "geoip-cn"
@@ -112,7 +101,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://ipv6.google.com/generate_204"
+      "url": "https://www.google.com/generate_204"
     },
     {
       "interrupt_exist_connections": true,
