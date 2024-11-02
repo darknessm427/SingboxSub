@@ -40,6 +40,20 @@
           ]
         },
         {
+          "package_name": [
+            "com.android.captiveportallogin",
+            "com.biglybt.android.client",
+            "com.bittorrent.client",
+            "com.utorrent.client",
+            "net.i2p.android.router",
+            "org.openobservatory.ooniprobe",
+            "org.proninyaroslav.libretorrent",
+            "org.purplei2p.i2pd",
+            "org.torproject.android",
+            "org.torproject.torbrowser"
+          ]
+        },
+        {
           "domain_suffix": [
             "location.services.mozilla.com",
             "push.apple.com",
