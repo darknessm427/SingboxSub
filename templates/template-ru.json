@@ -67,9 +67,6 @@
         "192.168.0.0/16",
         "fc00::/7"
       ],
-      "route_exclude_address_set": [
-        "geoip-ru"
-      ],
       "sniff": true,
       "strict_route": true,
       "type": "tun"
