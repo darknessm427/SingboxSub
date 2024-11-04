@@ -41,7 +41,6 @@
         "filter": "🇺🇸",
         "filter_type": [
           "http",
-          "shadowsocks",
           "shadowsocksr",
           "socks"
         ],
