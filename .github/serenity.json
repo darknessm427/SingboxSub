@@ -14,6 +14,10 @@
   ],
   "subscriptions": [
     {
+      "name": "collector",
+      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
+    },
+    {
       "name": "azadi",
       "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/Service@main/Sub"
     },
@@ -30,15 +34,14 @@
       "url": "https://itshin.serv00.net/api/warpinator/"
     },
     {
-      "name": "collector",
-      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
-    },
-    {
       "name": "final",
       "url": "http://127.0.0.1:8080/servers",
       "update_interval": "5m0s",
       "process": {
-        "filter": "🇺🇸",
+        "filter": [
+          "🇹🇷",
+          "🇺🇸"
+        ],
         "filter_type": [
           "http",
           "shadowsocksr",
@@ -63,11 +66,11 @@
       "name": "servers",
       "template": "breakfree",
       "subscription": [
+        "collector",
         "azadi",
         "jnir",
-        //"ircp",
-        "warp",
-        "collector"
+        "ircp",
+        "warp"
       ]
     },
     {
