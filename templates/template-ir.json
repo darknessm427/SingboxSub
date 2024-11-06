@@ -94,7 +94,8 @@
       "type": "selector"
     },
     {
-      "interval": "30m0s",
+      "idle_timeout": "60m0s",
+      "interval": "60m0s",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
