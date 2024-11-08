@@ -65,9 +65,7 @@
       "subscription": [
         "collector",
         "azadi",
-        "jnir",
-        //"ircp",
-        "warp"
+        "jnir"
       ]
     },
     {
