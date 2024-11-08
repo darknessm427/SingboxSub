@@ -63,10 +63,7 @@
           "server_port": 7890
         }
       },
-      "route_exclude_address": [
-        "192.168.0.0/16",
-        "fc00::/7"
-      ],
+      "route_exclude_address": "192.168.0.0/16",
       "sniff": true,
       "strict_route": true,
       "type": "tun"
@@ -94,8 +91,8 @@
       "type": "selector"
     },
     {
-      "idle_timeout": "60m0s",
-      "interval": "60m0s",
+      "idle_timeout": "1h",
+      "interval": "1h",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
@@ -225,17 +222,8 @@
     ],
     "rules": [
       {
-        "mode": "or",
         "outbound": "dns",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "type": "logical"
+        "protocol": "dns"
       },
       {
         "ip_is_private": true,
@@ -244,14 +232,6 @@
       {
         "outbound": "direct",
         "protocol": "bittorrent"
-      },
-      {
-        "outbound": "direct",
-        "rule_set": [
-          "direct",
-          "geosite-connectivity-check",
-          "geosite-private"
-        ]
       },
       {
         "outbound": "block",
@@ -269,8 +249,11 @@
       {
         "outbound": "direct",
         "rule_set": [
+          "direct",
           "geoip-ir",
-          "geosite-ir"
+          "geosite-ir",
+          "geosite-connectivity-check",
+          "geosite-private"
         ]
       }
     ]
