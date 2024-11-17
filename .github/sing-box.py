@@ -14,10 +14,7 @@ with open(servers, "r") as src_file:
 with open(template, "r") as template_file:
     dst = json.load(template_file)
 
-servers_tags = src["outbounds"][3]["outbounds"]
-del src["outbounds"][3]
-del src["outbounds"][2]
-del src["outbounds"][1]
+servers_tags = src["outbounds"][1]["outbounds"]
 del src["outbounds"][0]
 servers = src["outbounds"]
 dst["outbounds"][2]["outbounds"].extend(servers_tags)
