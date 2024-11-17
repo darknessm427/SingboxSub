@@ -20,6 +20,7 @@ servers = src["outbounds"]
 dst["outbounds"][2]["outbounds"].extend(servers_tags)
 dst["outbounds"][1]["outbounds"].extend(servers_tags)
 dst["outbounds"].extend(servers)
+del dst["outbounds"][7]
 
 with open(dest, "w") as dst_file:
     json.dump(dst, dst_file, sort_keys=True, separators=(',', ':'))
