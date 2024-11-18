@@ -214,6 +214,13 @@
       {
         "download_detour": "direct",
         "format": "binary",
+        "tag": "geosite-googlefcm",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-googlefcm.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
         "tag": "geosite-private",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-private.srs"
@@ -252,6 +259,7 @@
           "geoip-ru",
           "geosite-category-ru",
           "geosite-connectivity-check",
+          "geosite-googlefcm",
           "geosite-private"
         ]
       }
