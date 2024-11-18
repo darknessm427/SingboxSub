@@ -73,8 +73,7 @@
       "type": "selector"
     },
     {
-      "idle_timeout": "6h",
-      "interval": "6h",
+      "interval": "30m",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
@@ -89,6 +88,7 @@
       "type": "selector"
     },
     {
+      "domain_strategy": "prefer_ipv6",
       "tag": "direct",
       "type": "direct"
     },

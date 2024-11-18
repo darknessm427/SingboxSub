@@ -50,12 +50,12 @@
   },
   "inbounds": [
     {
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "auto_route": true,
       "gso": true,
-      "inet4_address": "172.19.0.1/30",
-      "inet4_route_exclude_address": "192.168.0.0/16",
-      "inet6_address": "fdfe:dcba:9876::1/126",
-      "inet6_route_exclude_address": "fc00::/7",
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -63,6 +63,10 @@
           "server_port": 7890
         }
       },
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ],
       "sniff": true,
       "strict_route": true,
       "type": "tun"
@@ -90,8 +94,7 @@
       "type": "selector"
     },
     {
-      "idle_timeout": "6h",
-      "interval": "6h",
+      "interval": "30m",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
@@ -106,6 +109,7 @@
       "type": "selector"
     },
     {
+      "domain_strategy": "prefer_ipv6",
       "tag": "direct",
       "type": "direct"
     },
