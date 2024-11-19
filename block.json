@@ -7,6 +7,10 @@
       "rules": [
         {
           "port": 853
+        },
+        {
+          "network": "udp",
+          "port": 443
         }
       ]
     }
