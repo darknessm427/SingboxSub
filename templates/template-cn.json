@@ -244,6 +244,22 @@
         "protocol": "bittorrent"
       },
       {
+        "outbound": "direct",
+        "rule_set": [
+          "direct",
+          "geosite-connectivity-check",
+          "geosite-googlefcm",
+          "geosite-private"
+        ]
+      },
+      {
+        "outbound": "block",
+        "protocol": [
+          "quic",
+          "stun"
+        ]
+      },
+      {
         "outbound": "block",
         "rule_set": [
           "block",
@@ -258,12 +274,8 @@
       {
         "outbound": "direct",
         "rule_set": [
-          "direct",
           "geoip-cn",
-          "geosite-cn",
-          "geosite-connectivity-check",
-          "geosite-googlefcm",
-          "geosite-private"
+          "geosite-cn"
         ]
       }
     ]
