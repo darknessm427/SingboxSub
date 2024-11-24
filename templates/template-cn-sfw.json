@@ -55,7 +55,6 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "gso": true,
       "platform": {
         "http_proxy": {
           "enabled": true,
