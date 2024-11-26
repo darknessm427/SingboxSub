@@ -15,25 +15,40 @@
   "subscriptions": [
     {
       "name": "collector",
-      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
+      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json",
+      "process": {
+        "filter": [
+          "US",
+          "🇺🇸"
+        ],
+        "remove": true
+      }
+    },
+    {
+      "name": "eternity",
+      "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
     },
     {
       "name": "azadi",
       "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/Service@main/Sub"
     },
     {
-      "name": "ircp",
-      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
-    },
-    {
       "name": "jnir",
       "url": "https://cdn.jsdelivr.net/gh/bamdad23/JavidnamanIran@main/JNIR"
+    },
+    {
+      "name": "ircp",
+      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
     },
     {
       "name": "final",
       "url": "http://127.0.0.1:8080/servers",
       "update_interval": "5m0s",
       "process": {
+        "filter": [
+          "TR",
+          "🇹🇷"
+        ],
         "filter_type": [
           "http",
           "shadowsocksr",
@@ -59,9 +74,10 @@
       "template": "breakfree",
       "subscription": [
         "collector",
+        "eternity",
         "azadi",
-        //"ircp",
-        "jnir"
+        "jnir",
+        "ircp"
       ]
     },
     {
