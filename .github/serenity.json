@@ -3,26 +3,11 @@
     "level": "debug"
   },
   "listen": "127.0.0.1:8080",
-  "cache_file": ".github/serenity.db",
-  "outbounds": [
-    {
-      "type": "direct"
-    },
-    {
-      "type": "dns"
-    }
-  ],
+  "cache_file": "serenity.db",
   "subscriptions": [
     {
       "name": "collector",
-      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json",
-      "process": {
-        "filter": [
-          "US",
-          "🇺🇸"
-        ],
-        "remove": true
-      }
+      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
     },
     {
       "name": "eternity",
@@ -43,22 +28,19 @@
     {
       "name": "final",
       "url": "http://127.0.0.1:8080/servers",
-      "update_interval": "5m0s",
       "process": {
         "filter": [
           "TR",
-          "🇹🇷"
+          "US",
+          "🇹🇷",
+          "🇺🇸"
         ],
         "filter_type": [
           "http",
           "shadowsocksr",
           "socks"
         ],
-        "remove": true,
-        "rewrite_multiplex": {
-          "enabled": true,
-          "padding": true
-        }
+        "remove": true
       },
       "deduplication": true
     }
@@ -76,7 +58,7 @@
         "collector",
         "eternity",
         "azadi",
-        //"ircp",
+        "ircp",
         "jnir"
       ]
     },
