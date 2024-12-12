@@ -234,13 +234,6 @@
       },
       {
         "outbound": "block",
-        "protocol": [
-          "quic",
-          "stun"
-        ]
-      },
-      {
-        "outbound": "block",
         "rule_set": [
           "block",
           "geoip-malware",
