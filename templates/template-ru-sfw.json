@@ -21,12 +21,10 @@
     ],
     "servers": [
       {
-        "address": "https://dns.google/dns-query",
-        "address_resolver": "local",
-        "tag": "remote"
+        "address": "https://8.8.8.8/dns-query"
       },
       {
-        "address": "https://77.88.8.8/dns-query",
+        "address": "8.8.8.8",
         "detour": "direct",
         "tag": "local"
       },

@@ -21,12 +21,10 @@
     ],
     "servers": [
       {
-        "address": "https://dns.google/dns-query",
-        "address_resolver": "local",
-        "tag": "remote"
+        "address": "https://8.8.8.8/dns-query"
       },
       {
-        "address": "https://223.5.5.5/dns-query",
+        "address": "8.8.8.8",
         "detour": "direct",
         "tag": "local"
       },
@@ -204,9 +202,9 @@
       {
         "download_detour": "direct",
         "format": "binary",
-        "tag": "geosite-ir",
+        "tag": "geosite-category-ir",
         "type": "remote",
-        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs"
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-ir.srs"
       },
       {
         "download_detour": "direct",
@@ -269,7 +267,7 @@
         "outbound": "direct",
         "rule_set": [
           "geoip-ir",
-          "geosite-ir"
+          "geosite-category-ir"
         ]
       }
     ]
