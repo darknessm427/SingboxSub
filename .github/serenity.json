@@ -6,6 +6,18 @@
   "cache_file": "serenity.db",
   "subscriptions": [
     {
+      "name": "azadi",
+      "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/Service@main/Sub"
+    },
+    {
+      "name": "jnir",
+      "url": "https://cdn.jsdelivr.net/gh/bamdad23/JavidnamanIran@main/JNIR"
+    },
+    {
+      "name": "ircp",
+      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
+    },
+    {
       "name": "collector",
       "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
     },
@@ -14,31 +26,18 @@
       "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
     },
     {
-      "name": "azadi",
-      "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/Service@main/Sub"
-    },
-    {
-      "name": "ircp",
-      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
-    },
-    {
-      "name": "jnir",
-      "url": "https://cdn.jsdelivr.net/gh/bamdad23/JavidnamanIran@main/JNIR"
-    },
-    {
       "name": "final",
       "url": "http://127.0.0.1:8080/servers",
       "process": {
         "filter": [
           "IL",
           "TR",
-          "US",
           "🇮🇱",
-          "🇹🇷",
-          "🇺🇸"
+          "🇹🇷"
         ],
         "filter_type": [
           "http",
+          "shadowsocks",
           "shadowsocksr",
           "socks"
         ],
@@ -57,11 +56,11 @@
       "name": "servers",
       "template": "breakfree",
       "subscription": [
-        "collector",
-        "eternity",
         "azadi",
+        "jnir",
         "ircp",
-        "jnir"
+        "collector",
+        "eternity"
       ]
     },
     {
