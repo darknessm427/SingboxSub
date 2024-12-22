@@ -21,7 +21,8 @@
     ],
     "servers": [
       {
-        "address": "https://8.8.8.8/dns-query"
+        "address": "https://8.8.8.8/dns-query",
+        "tag": "remote"
       },
       {
         "address": "8.8.8.8",
@@ -91,7 +92,6 @@
       "type": "selector"
     },
     {
-      "interrupt_exist_connections": true,
       "interval": "30m",
       "outbounds": [],
       "tag": "auto",
