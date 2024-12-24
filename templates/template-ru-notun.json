@@ -72,11 +72,12 @@
       "type": "selector"
     },
     {
-      "interval": "30m",
+      "idle_timeout": "60m",
+      "interrupt_exist_connections": true,
+      "interval": "60m",
       "outbounds": [],
       "tag": "auto",
-      "type": "urltest",
-      "url": "https://www.youtube.com/generate_204"
+      "type": "urltest"
     },
     {
       "interrupt_exist_connections": true,
