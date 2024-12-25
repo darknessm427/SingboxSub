@@ -92,9 +92,7 @@
       "type": "selector"
     },
     {
-      "idle_timeout": "60m",
-      "interrupt_exist_connections": true,
-      "interval": "60m",
+      "interval": "30m",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest"
