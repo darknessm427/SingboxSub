@@ -59,7 +59,7 @@
       "subscription": [
         "azadi",
         "jnir",
-        "ircp",
+        //"ircp",
         "eternity",
         "collector"
       ]
