@@ -2,7 +2,7 @@
 
 # 🆓 Break Free!
 
-sing-box and mihomo configurations for plug-n-play usage, using freely available sources
+sing-box configurations for plug-n-play usage, using freely available sources
 
 📣 Our Telegram: <https://BreakRealFree.t.me>  
 [🎁 Donate](https://demarcush.github.io/#-donation)
@@ -10,7 +10,7 @@ sing-box and mihomo configurations for plug-n-play usage, using freely available
 ## ⚠️ Disclaimer
 
 This repository is not affiliated, associated, authorized, endorsed by, or in any way officially connected to any of the resources, websites, people, services or entities in its source code and is solely for educational purposes in the field of computers and networks, designed using resources already freely available on the Internet. Any illegal use is not approved!  
-While making every effort to provide a template of sing-box and mihomo configuration files to make the most secure connection available, this repository, as acknowledged by the AGPL license, is provided as-is, WITHOUT ANY GUARANTEES OF COMPLETENESS, CORRECTNESS, ACCURACY, SUITABILITY, RESPONSIBILITY, RELIABILITY OR AVAILABILITY AND WE ARE NOT RESPONSIBLE FOR ANY USE OF IT.  
+While making every effort to provide a template of sing-box configuration files to make the most secure connection available, this repository, as acknowledged by the AGPL license, is provided as-is, WITHOUT ANY GUARANTEES OF COMPLETENESS, CORRECTNESS, ACCURACY, SUITABILITY, RESPONSIBILITY, RELIABILITY OR AVAILABILITY.
 *If you are a person at risk or want guarantees about the security of your connection, your use of this repository is not approved. Please consult an expert before using any software (not just this repository).*
 
 ## 🦮 Tutorials and Links
