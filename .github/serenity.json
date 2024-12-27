@@ -7,7 +7,7 @@
   "subscriptions": [
     {
       "name": "eternity",
-      "url": "https://api.wcc.best/sub?target=singbox&list=true&scv=false&sort=true&url=https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
+      "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
     },
     {
       "name": "azadi",
