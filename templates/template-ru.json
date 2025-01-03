@@ -66,6 +66,8 @@
         "fc00::/7"
       ],
       "sniff": true,
+      "stack": "system",
+      "strict_route": true,
       "type": "tun"
     },
     {
