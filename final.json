@@ -377,6 +377,7 @@
         "🇺🇸 US 274",
         "🇺🇸 US 275",
         "🇺🇸 US 276",
+        "🇺🇸 US 277",
         "🇺🇸 US 278",
         "🇺🇸 US 279",
         "🇺🇸 US 280",
@@ -526,6 +527,7 @@
         "🇺🇸 US 424",
         "🇺🇸 US 425",
         "🇺🇸 US 426",
+        "🇺🇸 US 427",
         "🇺🇸 US 428",
         "🇺🇸 US 429",
         "🇺🇸 US 431",
@@ -575,7 +577,6 @@
         "🇳🇱 NL 12",
         "🇳🇱 NL 14",
         "🇳🇱 NL 15",
-        "🇳🇱 NL 16",
         "🇳🇱 NL 17",
         "🇳🇱 NL 18",
         "🇳🇱 NL 19",
@@ -588,6 +589,7 @@
         "🇳🇱 NL 28",
         "🇳🇱 NL 29",
         "🇳🇱 NL 31",
+        "🇳🇱 NL 32",
         "🇳🇱 NL 33",
         "🇳🇱 NL 34",
         "🇳🇱 NL 35",
@@ -3247,6 +3249,17 @@
       "password": "KixLvKzwjekG00rm"
     },
     {
+      "type": "trojan",
+      "tag": "🇺🇸 US 277",
+      "server": "native-tetra.boa152.lol",
+      "server_port": 443,
+      "password": "3723507166611775488",
+      "tls": {
+        "enabled": true,
+        "server_name": "native-tetra.boa152.lol"
+      }
+    },
+    {
       "type": "shadowsocks",
       "tag": "🇺🇸 US 278",
       "server": "23.157.40.120",
@@ -4457,6 +4470,17 @@
       "password": "TEzjfAYq2IjtuoS"
     },
     {
+      "type": "trojan",
+      "tag": "🇺🇸 US 427",
+      "server": "native-tetra.boa152.lol",
+      "server_port": 443,
+      "password": "3723507166611775488",
+      "tls": {
+        "enabled": true,
+        "server_name": "native-tetra.boa152.lol"
+      }
+    },
+    {
       "type": "shadowsocks",
       "tag": "🇺🇸 US 428",
       "server": "23.150.152.16",
@@ -4884,13 +4908,6 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱 NL 16",
-      "server": "188.119.112.104",
-      "server_port": 2198,
-      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6"
-    },
-    {
-      "type": "vless",
       "tag": "🇳🇱 NL 17",
       "server": "77.91.122.133",
       "server_port": 2198,
@@ -4977,6 +4994,13 @@
       "type": "vless",
       "tag": "🇳🇱 NL 31",
       "server": "s2.baybalan.my",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 NL 32",
+      "server": "95.164.2.177",
       "server_port": 2198,
       "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6"
     },
