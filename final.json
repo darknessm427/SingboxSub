@@ -577,6 +577,7 @@
         "🇳🇱 NL 12",
         "🇳🇱 NL 14",
         "🇳🇱 NL 15",
+        "🇳🇱 NL 16",
         "🇳🇱 NL 17",
         "🇳🇱 NL 18",
         "🇳🇱 NL 19",
@@ -4903,6 +4904,13 @@
       "type": "vless",
       "tag": "🇳🇱 NL 15",
       "server": "94.131.105.11",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 NL 16",
+      "server": "188.119.112.104",
       "server_port": 2198,
       "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6"
     },
