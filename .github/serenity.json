@@ -6,10 +6,6 @@
   "cache_file": "serenity.db",
   "subscriptions": [
     {
-      "name": "eternity",
-      "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
-    },
-    {
       "name": "azadi",
       "url": "https://cdn.jsdelivr.net/gh/azadiazinjamigzare/Service@main/Sub"
     },
@@ -18,16 +14,20 @@
       "url": "https://cdn.jsdelivr.net/gh/bamdad23/JavidnamanIran@main/JNIR"
     },
     {
+      "name": "ircp",
+      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
+    },
+    {
+      "name": "eternity",
+      "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
+    },
+    {
       "name": "collector",
       "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
     },
     {
       "name": "soroush",
       "url": "https://api.wcc.best/sub?target=singbox&list=true&scv=false&sort=true&url=https://cdn.jsdelivr.net/gh/soroushmirzaei/telegram-configs-collector@main/splitted/mixed"
-    },
-    {
-      "name": "ircp",
-      "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
     },
     {
       "name": "final",
@@ -41,6 +41,7 @@
         ],
         "filter_type": [
           "http",
+          "shadowsocks",
           "shadowsocksr",
           "socks"
         ],
@@ -59,12 +60,12 @@
       "name": "servers",
       "template": "breakfree",
       "subscription": [
-        "eternity",
         "azadi",
         "jnir",
-        //"collector",
-        //"soroush",
-        "ircp"
+        "ircp",
+        "eternity",
+        "collector",
+        "soroush"
       ]
     },
     {
