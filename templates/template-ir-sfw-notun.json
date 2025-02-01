@@ -181,9 +181,9 @@
       {
         "download_detour": "direct",
         "format": "binary",
-        "tag": "geosite-category-ir",
+        "tag": "geosite-ir",
         "type": "remote",
-        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-ir.srs"
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs"
       },
       {
         "download_detour": "direct",
@@ -246,7 +246,7 @@
         "outbound": "direct",
         "rule_set": [
           "geoip-ir",
-          "geosite-category-ir"
+          "geosite-ir"
         ]
       }
     ]
