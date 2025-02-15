@@ -52,7 +52,6 @@
       "listen": "::",
       "listen_port": 7890,
       "set_system_proxy": true,
-      "sniff": true,
       "type": "mixed"
     }
   ],
@@ -65,8 +64,7 @@
       "outbounds": [
         "auto",
         "manual",
-        "direct",
-        "block"
+        "direct"
       ],
       "tag": "default",
       "type": "selector"
@@ -75,7 +73,8 @@
       "interval": "30m",
       "outbounds": [],
       "tag": "auto",
-      "type": "urltest"
+      "type": "urltest",
+      "url": "https://www.google.com/search?q=google"
     },
     {
       "interrupt_exist_connections": true,
@@ -89,14 +88,6 @@
       "domain_strategy": "prefer_ipv6",
       "tag": "direct",
       "type": "direct"
-    },
-    {
-      "tag": "block",
-      "type": "block"
-    },
-    {
-      "tag": "dns",
-      "type": "dns"
     },
     {
       "server": "localhost",
@@ -209,7 +200,10 @@
     ],
     "rules": [
       {
-        "outbound": "dns",
+        "action": "sniff"
+      },
+      {
+        "action": "hijack-dns",
         "protocol": "dns"
       },
       {
@@ -230,7 +224,7 @@
         ]
       },
       {
-        "outbound": "block",
+        "action": "reject",
         "rule_set": [
           "block",
           "geoip-malware",
