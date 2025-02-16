@@ -87,7 +87,6 @@
       "type": "selector"
     },
     {
-      "interval": "30m",
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
@@ -232,15 +231,6 @@
         "protocol": "bittorrent"
       },
       {
-        "outbound": "direct",
-        "rule_set": [
-          "direct",
-          "geosite-connectivity-check",
-          "geosite-googlefcm",
-          "geosite-private"
-        ]
-      },
-      {
         "action": "reject",
         "rule_set": [
           "block",
@@ -255,8 +245,12 @@
       {
         "outbound": "direct",
         "rule_set": [
+          "direct",
           "geoip-ir",
-          "geosite-ir"
+          "geosite-ir",
+          "geosite-connectivity-check",
+          "geosite-googlefcm",
+          "geosite-private"
         ]
       }
     ]
