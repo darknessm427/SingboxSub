@@ -58,6 +58,11 @@
   "log": {
     "level": "fatal"
   },
+  "ntp": {
+    "detour": "direct",
+    "enabled": true,
+    "server": "2.pool.ntp.org"
+  },
   "outbounds": [
     {
       "interrupt_exist_connections": true,
@@ -84,7 +89,6 @@
       "type": "selector"
     },
     {
-      "domain_strategy": "prefer_ipv6",
       "tag": "direct",
       "type": "direct"
     },
