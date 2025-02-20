@@ -95,7 +95,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://yts.mx/robots.txt"
+      "url": "https://www.google.com/search?q=google"
     },
     {
       "interrupt_exist_connections": true,
