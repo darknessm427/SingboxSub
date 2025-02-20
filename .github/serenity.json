@@ -44,7 +44,8 @@
           "http",
           "shadowsocks",
           "shadowsocksr",
-          "socks"
+          "socks",
+          "trojan"
         ],
         "remove": true
       },
