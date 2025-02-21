@@ -13,8 +13,8 @@
       },
       {
         "query_type": [
-          "A",
-          "AAAA"
+          "AAAA",
+          "A"
         ],
         "server": "fakeip"
       }
@@ -61,7 +61,7 @@
   "ntp": {
     "detour": "direct",
     "enabled": true,
-    "server": "2.pool.ntp.org"
+    "server": "time.apple.com"
   },
   "outbounds": [
     {
@@ -75,10 +75,11 @@
       "type": "selector"
     },
     {
-      "outbounds": [],
+      "outbounds": [
+        "💙 Telegram: @BreakRealFree"
+      ],
       "tag": "auto",
-      "type": "urltest",
-      "url": "https://www.google.com/search?q=google"
+      "type": "urltest"
     },
     {
       "interrupt_exist_connections": true,
