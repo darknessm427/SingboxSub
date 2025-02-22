@@ -109,7 +109,8 @@
         "💙 Telegram: @BreakRealFree"
       ],
       "tag": "auto",
-      "type": "urltest"
+      "type": "urltest",
+      "url": "https://www.google.com/search?q=google"
     },
     {
       "interrupt_exist_connections": true,
