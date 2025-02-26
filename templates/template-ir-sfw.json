@@ -105,9 +105,7 @@
       "type": "selector"
     },
     {
-      "outbounds": [
-        "💙 Telegram: @BreakRealFree"
-      ],
+      "outbounds": [],
       "tag": "auto",
       "type": "urltest",
       "url": "https://www.google.com/search?q=google"
@@ -125,7 +123,7 @@
       "type": "direct"
     },
     {
-      "server": "localhost",
+      "server": "127.0.0.1",
       "server_port": 987,
       "tag": "💙 Telegram: @BreakRealFree",
       "type": "http"
