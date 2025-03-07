@@ -91,7 +91,7 @@
   "ntp": {
     "detour": "direct",
     "enabled": true,
-    "server": "time.apple.com"
+    "server": "2.pool.ntp.org"
   },
   "outbounds": [
     {
@@ -107,6 +107,7 @@
     {
       "outbounds": [],
       "tag": "auto",
+      "tolerance": 1,
       "type": "urltest",
       "url": "https://www.google.com/search?q=google"
     },
