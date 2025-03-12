@@ -50,8 +50,8 @@
   "inbounds": [
     {
       "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "fdfe:dcba:9876::1/126",
+        "172.19.0.1/30"
       ],
       "auto_route": true,
       "exclude_package": [
@@ -73,8 +73,6 @@
           "server_port": 7890
         }
       },
-      "route_exclude_address": "192.168.0.0/16",
-      "route_exclude_address_set": "geoip-ru",
       "stack": "system",
       "strict_route": true,
       "type": "tun"
