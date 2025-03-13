@@ -18,12 +18,12 @@
       "url": "https://cdn.jsdelivr.net/gh/IranianCypherpunks/SingBox@main/Sub"
     },
     {
-      "name": "collector",
-      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
-    },
-    {
       "name": "eternity",
       "url": "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/Eternity.yml"
+    },
+    {
+      "name": "collector",
+      "url": "https://cdn.jsdelivr.net/gh/Mahdi0024/ProxyCollector@master/sub/singbox.json"
     },
     {
       "name": "soroush",
@@ -72,8 +72,8 @@
         "azadi",
         "jnir",
         "ircp",
-        "collector",
-        "eternity"
+        "eternity",
+        "collector"
       ]
     },
     {
