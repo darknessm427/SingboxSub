@@ -105,7 +105,6 @@
     {
       "outbounds": [],
       "tag": "auto",
-      "tolerance": 1,
       "type": "urltest",
       "url": "https://www.google.com/search?q=google"
     },
