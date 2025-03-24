@@ -26,8 +26,8 @@ jobs:
     - name: Install wgcf
       run: |
         # Download and install wgcf
-	export WGCF_VERSION="2.2.25"
-        curl -sL https://github.com/ViRb3/wgcf/releases/download/v${WGCF_VERSION}/wgcf_${WGCF_VERSION}_linux_amd64 -o wgcf
+	WGCF_VERSION="2.2.25"
+ 	curl -sSL "https://github.com/ViRb3/wgcf/releases/download/v${WGCF_VERSION}/wgcf_${WGCF_VERSION}_linux_amd64" -o wgcf
         chmod +x wgcf
         sudo mv wgcf /usr/local/bin/
 
@@ -61,7 +61,7 @@ jobs:
       run: |
         # Replace with your script to update the Sing-Box config
         for i in release/Sing-Box/*.json
-	do python warp-singbox-config.py ${i} \
+	do python .github/warp-singbox-config.py ${i} \
           "${{ steps.extract_keys.outputs.private_key_0 }}" \
           "${{ steps.extract_keys.outputs.private_key_1 }}"
 	done
