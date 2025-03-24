@@ -21,12 +21,13 @@
     ],
     "servers": [
       {
-        "address": "https://8.8.8.8/dns-query",
+        "address": "https://1.1.1.1/dns-query",
         "tag": "remote"
       },
       {
         "address": "tls://8.8.8.8",
-        "detour": "plain",
+        "detour": "direct",
+        "strategy": "prefer_ipv6",
         "tag": "local"
       },
       {
@@ -38,10 +39,10 @@
   "endpoints": [
     {
       "address": [
-        "172.16.0.2/32",
-        "2606:4700:110::1/128"
+        "2606:4700:110::2/128",
+        "172.16.0.2/32"
       ],
-      "detour": "direct",
+      "detour": "warp",
       "mtu": 1280,
       "peers": [
         {
@@ -49,22 +50,21 @@
           "allowed_ips": [
             "0.0.0.0/1",
             "128.0.0.0/1",
-            "::/1",
-            "8000::/1"
+            "8000::/1",
+            "::/1"
           ],
           "port": 2408,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-          "reserved": "HFSD"
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
       "private_key": "gOphjFs26oWmZ+slhruYmzGUvUAaHyegGIyI+2Wcm10=",
-      "tag": "warp",
+      "tag": "gool",
       "type": "wireguard"
     },
     {
       "address": [
-        "172.16.0.3/32",
-        "2606:4700:110::2/128"
+        "2606:4700:110::3/128",
+        "172.16.0.3/32"
       ],
       "mtu": 1280,
       "peers": [
@@ -73,16 +73,15 @@
           "allowed_ips": [
             "0.0.0.0/1",
             "128.0.0.0/1",
-            "::/1",
-            "8000::/1"
+            "8000::/1",
+            "::/1"
           ],
           "port": 4500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-          "reserved": "HFSD"
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
       "private_key": "QP9btrAFzIojVs6rUgag3ixmNG+XaUEE3UBsGs2bnEg=",
-      "tag": "direct",
+      "tag": "warp",
       "type": "wireguard"
     }
   ],
@@ -95,7 +94,7 @@
     "clash_api": {
       "external_controller": "localhost:9090",
       "external_ui": "yacd",
-      "external_ui_download_detour": "plain"
+      "external_ui_download_detour": "direct"
     }
   },
   "inbounds": [
@@ -107,12 +106,7 @@
       "auto_route": true,
       "exclude_package": [
         "com.android.captiveportallogin",
-        "com.biglybt.android.client",
-        "com.bittorrent.client",
-        "com.utorrent.client",
         "net.i2p.android.router",
-        "org.openobservatory.ooniprobe",
-        "org.proninyaroslav.libretorrent",
         "org.purplei2p.i2pd",
         "org.torproject.android",
         "org.torproject.torbrowser"
@@ -138,7 +132,7 @@
     "level": "fatal"
   },
   "ntp": {
-    "detour": "plain",
+    "detour": "direct",
     "enabled": true,
     "server": "2.pool.ntp.org"
   },
@@ -148,6 +142,7 @@
       "outbounds": [
         "auto",
         "manual",
+        "gool",
         "warp",
         "direct"
       ],
@@ -156,7 +151,8 @@
     },
     {
       "outbounds": [
-        "\ud83d\udc99 Telegram: @BreakRealFree",
+        "💙 Telegram: @BreakRealFree",
+        "gool",
         "warp"
       ],
       "tag": "auto",
@@ -166,20 +162,21 @@
     {
       "interrupt_exist_connections": true,
       "outbounds": [
-        "\ud83d\udc99 Telegram: @BreakRealFree",
+        "💙 Telegram: @BreakRealFree",
+        "gool",
         "warp"
       ],
       "tag": "manual",
       "type": "selector"
     },
     {
-      "tag": "plain",
+      "tag": "direct",
       "type": "direct"
     },
     {
       "server": "127.0.0.1",
       "server_port": 987,
-      "tag": "\ud83d\udc99 Telegram: @BreakRealFree",
+      "tag": "💙 Telegram: @BreakRealFree",
       "type": "http"
     }
   ],
@@ -187,98 +184,98 @@
     "auto_detect_interface": true,
     "rule_set": [
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "block",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/block.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geoip-malware",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-malware.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geoip-phishing",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-phishing.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-category-ads-all",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-ads-all.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-cryptominers",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-cryptominers.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-malware",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-malware.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-nsfw",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-nsfw.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-phishing",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-phishing.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "direct",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/direct.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geoip-ru",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ru.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-category-ru",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-ru.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-connectivity-check",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-connectivity-check.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-googlefcm",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-googlefcm.srs"
       },
       {
-        "download_detour": "plain",
+        "download_detour": "direct",
         "format": "binary",
         "tag": "geosite-private",
         "type": "remote",
