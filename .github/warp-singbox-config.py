@@ -10,7 +10,7 @@ def update_singbox_config(config_path, private_key_0, private_key_1):
     config['endpoints'][1]['private_key'] = private_key_1
 
     with open(config_path, 'w') as file:
-        json.dump(config, file, sort_keys=True, separators=(',', ':'))
+        json.dump(config, file, sort_keys=True)
 
 if __name__ == "__main__":
     config_path = sys.argv[1]
