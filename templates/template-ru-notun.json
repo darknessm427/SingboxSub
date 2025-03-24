@@ -27,7 +27,6 @@
       {
         "address": "tls://8.8.8.8",
         "detour": "direct",
-        "strategy": "prefer_ipv6",
         "tag": "local"
       },
       {
@@ -39,19 +38,16 @@
   "endpoints": [
     {
       "address": [
-        "2606:4700:110::2/128",
-        "172.16.0.2/32"
+        "172.16.0.2/32",
+        "2606:4700:110::2/128"
       ],
       "detour": "warp",
-      "mtu": 1280,
       "peers": [
         {
           "address": "engage.cloudflareclient.com",
           "allowed_ips": [
-            "0.0.0.0/1",
-            "128.0.0.0/1",
-            "8000::/1",
-            "::/1"
+            "0.0.0.0/0",
+            "::/0"
           ],
           "port": 2408,
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
@@ -63,20 +59,63 @@
     },
     {
       "address": [
-        "2606:4700:110::3/128",
-        "172.16.0.3/32"
+        "172.16.0.3/32",
+        "2606:4700:110::3/128"
       ],
-      "mtu": 1280,
+      "domain_strategy": "prefer_ipv6",
       "peers": [
         {
           "address": "engage.cloudflareclient.com",
           "allowed_ips": [
-            "0.0.0.0/1",
-            "128.0.0.0/1",
-            "8000::/1",
-            "::/1"
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 2408,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "engage.cloudflareclient.com",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
           ],
           "port": 4500,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "engage.cloudflareclient.com",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 500,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "engage.cloudflareclient.com",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 53,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "engage.cloudflareclient.com",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 443,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "engage.cloudflareclient.com",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 80,
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
@@ -128,7 +167,7 @@
     },
     {
       "outbounds": [
-        "\ud83d\udc99 Telegram: @BreakRealFree",
+        "💙 Telegram: @BreakRealFree",
         "gool",
         "warp"
       ],
@@ -139,7 +178,7 @@
     {
       "interrupt_exist_connections": true,
       "outbounds": [
-        "\ud83d\udc99 Telegram: @BreakRealFree",
+        "💙 Telegram: @BreakRealFree",
         "gool",
         "warp"
       ],
@@ -153,7 +192,7 @@
     {
       "server": "127.0.0.1",
       "server_port": 987,
-      "tag": "\ud83d\udc99 Telegram: @BreakRealFree",
+      "tag": "💙 Telegram: @BreakRealFree",
       "type": "http"
     }
   ],
