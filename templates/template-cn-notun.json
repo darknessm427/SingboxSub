@@ -57,7 +57,7 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
-      "private_key": "gOphjFs26oWmZ+slhruYmzGUvUAaHyegGIyI+2Wcm10=",
+      "private_key": "CBh1zn8SxQalq0i/ZSLL4xtcYThfDg6idGaJsfbTlXY=",
       "tag": "gool",
       "type": "wireguard"
     },
@@ -80,7 +80,7 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
-      "private_key": "QP9btrAFzIojVs6rUgag3ixmNG+XaUEE3UBsGs2bnEg=",
+      "private_key": "qGZYl0bCz4BBLqMs/6c0C0rW3CBV7QOPUMGOQ0uogm8=",
       "tag": "warp",
       "type": "wireguard"
     }
@@ -128,7 +128,7 @@
     },
     {
       "outbounds": [
-        "💙 Telegram: @BreakRealFree",
+        "\ud83d\udc99 Telegram: @BreakRealFree",
         "gool",
         "warp"
       ],
@@ -139,7 +139,7 @@
     {
       "interrupt_exist_connections": true,
       "outbounds": [
-        "💙 Telegram: @BreakRealFree",
+        "\ud83d\udc99 Telegram: @BreakRealFree",
         "gool",
         "warp"
       ],
@@ -153,7 +153,7 @@
     {
       "server": "127.0.0.1",
       "server_port": 987,
-      "tag": "💙 Telegram: @BreakRealFree",
+      "tag": "\ud83d\udc99 Telegram: @BreakRealFree",
       "type": "http"
     }
   ],
