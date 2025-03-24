@@ -61,7 +61,7 @@ jobs:
       - name: Update Sing-Box Configuration
         run: |
           # Replace with your script to update the Sing-Box config
-          for i in release/Sing-Box/*.json
+          for i in templates/*.json
           do
             python .github/warp-singbox-config.py ${i} \
             "${{ steps.extract_keys.outputs.private_key_0 }}" \
