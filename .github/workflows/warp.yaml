@@ -72,6 +72,6 @@ jobs:
         run: |
           git config --local user.name "Github Actions"
           git config --local user.email "actions@github.com"
-          git add release/Sing-Box
+          git add templates
           git commit -m "Update Sing-Box config with new Warp keys" || echo "Warp: no changes"
           git push
