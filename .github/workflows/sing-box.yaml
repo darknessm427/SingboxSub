@@ -1,3 +1,4 @@
+name: Sing-box node collection
 on:
   workflow_dispatch:
   schedule:
