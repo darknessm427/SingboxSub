@@ -26,7 +26,7 @@ jobs:
       - name: Install wgcf
         run: |
           export WGCF_VER=2.2.25
-          curl -sSL -o wgcf "https://github.com/ViRb3/wgcf/releases/download/v${WGCF_VERSION}/wgcf_${WGCF_VER}_linux_amd64"
+          curl -sSL -o wgcf "https://github.com/ViRb3/wgcf/releases/download/v${WGCF_VER}/wgcf_${WGCF_VER}_linux_amd64"
           chmod +x wgcf
           mkdir -p ~/.local/bin
           mv wgcf ~/.local/bin
