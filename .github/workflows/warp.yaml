@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y jq curl dig
+          sudo apt install -y jq curl
 
       - name: Install wgcf
         run: |
