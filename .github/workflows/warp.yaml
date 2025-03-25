@@ -69,9 +69,9 @@ jobs:
 
             ipv4=$(dig +short engage.cloudflareclient.com A | head -n1)
             ipv6=$(dig +short engage.cloudflareclient.com AAAA | head -n1)
-            jq --arg ipv4 "$ipv4" --arg ipv6 "$ipv6" '
-            .endpoints[0].peers[0].address = $ipv4 |
-            .endpoints[0].peers[1].address = $ipv6
+            jq --arg ipv6 "$ipv6" --arg ipv4 "$ipv4" '
+            .endpoints[0].peers[0].address = $ipv6 |
+            .endpoints[0].peers[1].address = $ipv4
             ' ${i} > temp.json && mv temp.json ${i}
           done
 
