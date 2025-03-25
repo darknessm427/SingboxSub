@@ -26,6 +26,15 @@
           ]
         },
         {
+          "package_name": [
+            "com.android.captiveportallogin",
+            "net.i2p.android.router",
+            "org.purplei2p.i2pd",
+            "org.torproject.android",
+            "org.torproject.torbrowser"
+          ]
+        },
+        {
           "domain_suffix": [
             "kinguploadf2m15.info",
             "push.apple.com",
