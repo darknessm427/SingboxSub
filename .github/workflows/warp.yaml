@@ -1,4 +1,4 @@
-name: Renew Warp Keys
+name: Renew Warp Keys and Endpoints
 
 on:
   schedule:
@@ -66,6 +66,13 @@ jobs:
             python .github/warp-singbox-config.py ${i} \
             "${{ steps.extract_keys.outputs.private_key_0 }}" \
             "${{ steps.extract_keys.outputs.private_key_1 }}"
+
+            ipv4=$(dig +short engage.cloudflareclient.com A | head -n1)
+            ipv6=$(dig +short engage.cloudflareclient.com AAAA | head -n1)
+            jq --arg ipv4 "$ipv4" --arg ipv6 "$ipv6" '
+            .endpoints[0].peers[0].address = $ipv4 |
+            .endpoints[0].peers[1].address = $ipv6
+            ' ${i} > temp.json && mv temp.json ${i}
           done
 
       - name: Commit changes
