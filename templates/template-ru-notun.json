@@ -22,10 +22,11 @@
     "servers": [
       {
         "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "local",
         "tag": "remote"
       },
       {
-        "address": "tls://8.8.8.8",
+        "address": "8.8.8.8",
         "detour": "direct",
         "tag": "local"
       },
@@ -33,14 +34,46 @@
         "address": "fakeip",
         "tag": "fakeip"
       }
-    ]
+    ],
+    "strategy": "prefer_ipv6"
   },
   "endpoints": [
     {
       "address": [
-        "172.16.0.2/32",
-        "2606:4700:110::2/128"
+        "2606:4700:110::3/128",
+        "172.16.0.3/32"
       ],
+      "connect_timeout": "20s",
+      "peers": [
+        {
+          "address": "162.159.192.1",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 500,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "2606:4700:d0::a29f:c001",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 4500,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        }
+      ],
+      "private_key": "AMzp3Q1DesYvU/hIYiU9ejU/uW6xjtg95ZZWxdI2olQ=",
+      "tag": "warp",
+      "type": "wireguard"
+    },
+    {
+      "address": [
+        "2606:4700:110::2/128",
+        "172.16.0.2/32"
+      ],
+      "connect_timeout": "20s",
       "detour": "warp",
       "peers": [
         {
@@ -56,72 +89,6 @@
       "private_key": "CBh1zn8SxQalq0i/ZSLL4xtcYThfDg6idGaJsfbTlXY=",
       "tag": "gool",
       "type": "wireguard"
-    },
-    {
-      "address": [
-        "172.16.0.3/32",
-        "2606:4700:110::3/128"
-      ],
-      "domain_strategy": "prefer_ipv6",
-      "peers": [
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 2408,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 4500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 53,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 443,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 80,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        }
-      ],
-      "private_key": "qGZYl0bCz4BBLqMs/6c0C0rW3CBV7QOPUMGOQ0uogm8=",
-      "tag": "warp",
-      "type": "wireguard"
     }
   ],
   "experimental": {
@@ -131,7 +98,7 @@
       "store_rdrc": true
     },
     "clash_api": {
-      "external_controller": "localhost:9090",
+      "external_controller": "127.0.0.1:9090",
       "external_ui": "yacd",
       "external_ui_download_detour": "direct"
     }
@@ -167,7 +134,6 @@
     },
     {
       "outbounds": [
-        "💙 Telegram: @BreakRealFree",
         "gool",
         "warp"
       ],
@@ -178,9 +144,7 @@
     {
       "interrupt_exist_connections": true,
       "outbounds": [
-        "💙 Telegram: @BreakRealFree",
-        "gool",
-        "warp"
+        "💙 Telegram: @BreakRealFree"
       ],
       "tag": "manual",
       "type": "selector"
