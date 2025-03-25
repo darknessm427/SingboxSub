@@ -147,9 +147,7 @@
     },
     {
       "interrupt_exist_connections": true,
-      "outbounds": [
-        "💙 Telegram: @BreakRealFree"
-      ],
+      "outbounds": [],
       "tag": "manual",
       "type": "selector"
     },
@@ -158,10 +156,13 @@
       "type": "direct"
     },
     {
-      "server": "127.0.0.1",
-      "server_port": 987,
-      "tag": "💙 Telegram: @BreakRealFree",
-      "type": "http"
+      "outbounds": [
+        "gool",
+        "warp",
+        "direct"
+      ],
+      "tag": "urltest",
+      "type": "urltest"
     }
   ],
   "route": {
