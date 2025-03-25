@@ -63,7 +63,7 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
-      "private_key": "cMS7Uf0EAy3YIgg1BQSUFaCjPRAyVihqTrCehUMTukA=",
+      "private_key": "EK8oYYuZArwv1AJgbn7jbrvP6PSJVzmmN/UpCRjrLHg=",
       "tag": "warp",
       "type": "wireguard"
     },
@@ -84,7 +84,7 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
-      "private_key": "APnMIR3AbkX8QndZ/SdMtpy8b5Dyjo4+9TnJ1oyVM08=",
+      "private_key": "4M3jIaEPs1cgexn4ni9bN1TbZfjGjuirmVgMemHLHls=",
       "tag": "gool",
       "type": "wireguard"
     }
