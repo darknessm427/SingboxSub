@@ -43,10 +43,9 @@
         "2606:4700:110::3/128",
         "172.16.0.3/32"
       ],
-      "connect_timeout": "20s",
       "peers": [
         {
-          "address": "162.159.192.1",
+          "address": "2606:4700:d0::a29f:c001",
           "allowed_ips": [
             "0.0.0.0/0",
             "::/0"
@@ -55,7 +54,7 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         },
         {
-          "address": "2606:4700:d0::a29f:c001",
+          "address": "162.159.192.1",
           "allowed_ips": [
             "0.0.0.0/0",
             "::/0"
@@ -73,7 +72,6 @@
         "2606:4700:110::2/128",
         "172.16.0.2/32"
       ],
-      "connect_timeout": "20s",
       "detour": "warp",
       "peers": [
         {
@@ -156,10 +154,7 @@
       "type": "selector"
     },
     {
-      "outbounds": [
-        "gool",
-        "warp"
-      ],
+      "outbounds": [],
       "tag": "auto",
       "type": "urltest",
       "url": "https://www.google.com/search?q=google"
