@@ -26,7 +26,7 @@
         "tag": "remote"
       },
       {
-        "address": "8.8.8.8",
+        "address": "local",
         "detour": "direct",
         "tag": "local"
       },
@@ -38,6 +38,36 @@
     "strategy": "prefer_ipv6"
   },
   "endpoints": [
+    {
+      "address": [
+        "2606:4700:110::2/128",
+        "172.16.0.2/32"
+      ],
+      "detour": "warp",
+      "peers": [
+        {
+          "address": "2606:4700:d0::a29f:c001",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 2408,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "162.159.192.1",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 2408,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        }
+      ],
+      "private_key": "4M3jIaEPs1cgexn4ni9bN1TbZfjGjuirmVgMemHLHls=",
+      "tag": "gool",
+      "type": "wireguard"
+    },
     {
       "address": [
         "2606:4700:110::3/128",
@@ -63,29 +93,8 @@
           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
         }
       ],
-      "private_key": "oJK3U4MVIwJZ67Xbem8nektV5LkquXsyRb4Ov05J02A=",
+      "private_key": "EK8oYYuZArwv1AJgbn7jbrvP6PSJVzmmN/UpCRjrLHg=",
       "tag": "warp",
-      "type": "wireguard"
-    },
-    {
-      "address": [
-        "2606:4700:110::2/128",
-        "172.16.0.2/32"
-      ],
-      "detour": "warp",
-      "peers": [
-        {
-          "address": "engage.cloudflareclient.com",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 2408,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        }
-      ],
-      "private_key": "gNZRyvZKC+nV8oSB5OP9ZcRcu9QAquK7ktAaHEAdEkE=",
-      "tag": "gool",
       "type": "wireguard"
     }
   ],
@@ -274,6 +283,15 @@
         "protocol": "bittorrent"
       },
       {
+        "outbound": "direct",
+        "rule_set": [
+          "direct",
+          "geosite-connectivity-check",
+          "geosite-googlefcm",
+          "geosite-private"
+        ]
+      },
+      {
         "action": "reject",
         "rule_set": [
           "block",
@@ -288,12 +306,8 @@
       {
         "outbound": "direct",
         "rule_set": [
-          "direct",
           "geoip-ir",
-          "geosite-ir",
-          "geosite-connectivity-check",
-          "geosite-googlefcm",
-          "geosite-private"
+          "geosite-ir"
         ]
       }
     ]
