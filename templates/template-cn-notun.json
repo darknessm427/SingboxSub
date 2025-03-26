@@ -146,9 +146,15 @@
     },
     {
       "interrupt_exist_connections": true,
-      "outbounds": [],
+      "outbounds": [
+        "💋 Telegram: @BreakRealFree"
+      ],
       "tag": "manual",
       "type": "selector"
+    },
+    {
+      "tag": "💋 Telegram: @BreakRealFree",
+      "type": "socks"
     },
     {
       "tag": "direct",
