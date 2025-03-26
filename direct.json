@@ -9,6 +9,8 @@
           "process_name": [
             "conjure-client",
             "conjure-client.exe",
+            "geoclue",
+            "geoclue.exe",
             "i2pd",
             "i2pd.exe",
             "lyrebird",
