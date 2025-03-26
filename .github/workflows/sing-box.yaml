@@ -23,7 +23,7 @@ jobs:
         run: nohup serenity run -c .github/serenity.json &
 
       - name: Collect final.json
-        run: sleep 10s; curl -fsSL http://127.0.0.1:8080/final | jq -Sc > final.json || echo "CURL FAILED!"
+        run: sleep 10s; curl -fsSL http://127.0.0.1:8080/final | jq -S > final.json || echo "CURL FAILED!"
 
       - name: Merging with Templates
         run: bash .github/merge.sh
