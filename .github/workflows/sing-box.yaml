@@ -10,8 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Serenity
-        run: bash <(curl -fsSL https://sing-box.app/serenity/deb-install.sh)
+      - name: Install Serenity and Sing-box
+        run: |
+          sudo curl -fsSL https://deb.sagernet.org/gpg.key -o /etc/apt/keyrings/sagernet.asc
+          sudo chmod a+r /etc/apt/keyrings/sagernet.asc
+          echo "deb [arch=`dpkg --print-architecture` signed-by=/etc/apt/keyrings/sagernet.asc] https://deb.sagernet.org/ * *" | \
+          sudo tee /etc/apt/sources.list.d/sagernet.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y serenity sing-box
 
       - name: Run Node Collection using Serenity
         run: nohup serenity run -c .github/serenity.json &
@@ -21,9 +27,6 @@ jobs:
 
       - name: Merging with Templates
         run: bash .github/merge.sh
-
-      - name: Install Sing-box
-        run: bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 
       - name: Testing Outputs using Sing-box
         run: for i in release/sing-box/*.json; do sing-box check -c ${i} && echo "${i} is OK!"; done
