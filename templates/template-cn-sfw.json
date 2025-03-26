@@ -21,7 +21,7 @@
     ],
     "servers": [
       {
-        "address": "https://1.1.1.1/dns-query",
+        "address": "https://1.1.1.2/dns-query",
         "address_resolver": "local",
         "tag": "remote"
       },
@@ -158,8 +158,7 @@
     {
       "outbounds": [],
       "tag": "auto",
-      "type": "urltest",
-      "url": "https://www.google.com/search?q=google"
+      "type": "urltest"
     },
     {
       "interrupt_exist_connections": true,
@@ -177,7 +176,7 @@
         "warp",
         "direct"
       ],
-      "tag": "urltest",
+      "tag": "ping",
       "type": "urltest"
     }
   ],
