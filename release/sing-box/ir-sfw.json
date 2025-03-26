@@ -518,6 +518,7 @@
     {
       "interrupt_exist_connections": true,
       "outbounds": [
+        "💋 Telegram: @BreakRealFree",
         "🇺🇸US-173.244.56.6-0301 | 151.404MB",
         "RELAY-188.164.248.120-1117 | 139.456MB",
         "🇺🇸US-79.110.53.169-0309 | 126.57MB",
@@ -875,6 +876,10 @@
       ],
       "tag": "manual",
       "type": "selector"
+    },
+    {
+      "tag": "💋 Telegram: @BreakRealFree",
+      "type": "socks"
     },
     {
       "tag": "direct",
