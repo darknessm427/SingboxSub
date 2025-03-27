@@ -185,7 +185,6 @@
         "RELAY-188.114.97.6-7829 | 12.386MB",
         "CH-156.146.62.161-0352 | 12.108MB",
         "SE-46.246.98.155-0362 | 11.852MB",
-        "RELAY-104.21.96.1-1125 | 11.545MB",
         "🇮🇳IN-159.65.149.72-0419 | 11.162MB",
         "RELAY-188.114.97.79-7836 | 10.762MB",
         "RELAY-104.21.15.36-7841 | 10.748MB",
@@ -1575,22 +1574,6 @@
       "server_port": 44013,
       "tag": "SE-46.246.98.155-0362 | 11.852MB",
       "type": "shadowsocks"
-    },
-    {
-      "network": "tcp",
-      "security": "auto",
-      "server": "us7-02.890624.xYz",
-      "server_port": 80,
-      "tag": "RELAY-104.21.96.1-1125 | 11.545MB",
-      "transport": {
-        "headers": {
-          "Host": "us7-02.890624.xYz"
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "uuid": "4d04b30c-ef7b-4a07-8f9e-f581ec171f8a"
     },
     {
       "method": "chacha20-ietf-poly1305",
