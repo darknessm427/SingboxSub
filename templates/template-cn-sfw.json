@@ -170,22 +170,12 @@
       "type": "selector"
     },
     {
-      "tag": "💋 Telegram: @BreakRealFree",
-      "type": "socks"
-    },
-    {
       "tag": "direct",
       "type": "direct"
     },
     {
-      "outbounds": [
-        "gool",
-        "warp",
-        "direct"
-      ],
-      "tag": "ping",
-      "type": "urltest",
-      "url": "https://www.google.com/search?q=google"
+      "tag": "💋 Telegram: @BreakRealFree",
+      "type": "socks"
     }
   ],
   "route": {
