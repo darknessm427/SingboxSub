@@ -159,7 +159,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://www.google.com/search?q=google"
+      "url": "https://chat.deepseek.com"
     },
     {
       "interrupt_exist_connections": true,
