@@ -125,7 +125,7 @@ def get_ip_info(geoip_reader: Optional[geoip2.database.Reader], ip: str) -> Tupl
     
     if geoip_reader and ip.replace('.', '').isdigit():
         try:
-            response = geoip2_reader.country(ip)
+            response = geoip_reader.country(ip)
             country_code = response.country.iso_code.lower() if response.country.iso_code else "unknown"
             
             if response.country.name and any(
