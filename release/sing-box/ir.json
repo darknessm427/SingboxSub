@@ -46,7 +46,16 @@
       "detour": "warp",
       "peers": [
         {
-          "address": "engage.cloudflareclient.com",
+          "address": "2606:4700:d0::a29f:c001",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 2408,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "162.159.192.1",
           "allowed_ips": [
             "0.0.0.0/0",
             "::/0"
@@ -306,19 +315,20 @@
         "🇺🇸 - 45.87.175.171:8080",
         "🇺🇸 - 45.87.175.178:8080",
         "🇺🇸 - 45.87.175.181:8080",
+        "🇺🇸 - 45.87.175.188:8080",
+        "🇺🇸 - 45.87.175.199:8080",
         "🇺🇸 - 64.74.163.130:990",
         "🇺🇸 - 79.110.53.169:8080",
         "🇺🇸 - 84.32.131.92:8880",
         "🇺🇸 - 84.32.9.19:8880",
         "🇺🇸 - 92.118.112.111:18622",
-        "🇺🇸 - beesyar.org:8080",
         "🇺🇸 - irvideo.cfd:443",
         "🇻🇪 - 45.158.171.110:8080",
         "🇻🇪 - 45.158.171.132:8080",
         "🇻🇪 - 45.158.171.141:8080",
-        "🇻🇪 - 45.158.171.146:8080",
         "🇻🇪 - 45.158.171.151:8080",
         "🇻🇪 - 45.158.171.66:8080",
+        "🇻🇪 - beesyar.org:8080",
         "🏴 - 104.18.149.76:443",
         "🏴 - 104.21.18.227:443",
         "🏴 - 13.125.21.61:443",
@@ -373,7 +383,6 @@
         "🏴 - upgrade.bia2bax.shop:8080",
         "🏴 - us01.sh-cloudflare.sbs:8443",
         "🏴 - us2vmess.rnmcnm.com:80",
-        "🏴 - us7-02.890624.xYz:80",
         "🏴 - Us7-03.890624.Xyz:443",
         "🏴 - US7-07.890624.xyz:80",
         "🏴 - usa-sanjose-one.890614.filegear-sg.me:443"
@@ -542,19 +551,20 @@
         "🇺🇸 - 45.87.175.171:8080",
         "🇺🇸 - 45.87.175.178:8080",
         "🇺🇸 - 45.87.175.181:8080",
+        "🇺🇸 - 45.87.175.188:8080",
+        "🇺🇸 - 45.87.175.199:8080",
         "🇺🇸 - 64.74.163.130:990",
         "🇺🇸 - 79.110.53.169:8080",
         "🇺🇸 - 84.32.131.92:8880",
         "🇺🇸 - 84.32.9.19:8880",
         "🇺🇸 - 92.118.112.111:18622",
-        "🇺🇸 - beesyar.org:8080",
         "🇺🇸 - irvideo.cfd:443",
         "🇻🇪 - 45.158.171.110:8080",
         "🇻🇪 - 45.158.171.132:8080",
         "🇻🇪 - 45.158.171.141:8080",
-        "🇻🇪 - 45.158.171.146:8080",
         "🇻🇪 - 45.158.171.151:8080",
         "🇻🇪 - 45.158.171.66:8080",
+        "🇻🇪 - beesyar.org:8080",
         "🏴 - 104.18.149.76:443",
         "🏴 - 104.21.18.227:443",
         "🏴 - 13.125.21.61:443",
@@ -609,7 +619,6 @@
         "🏴 - upgrade.bia2bax.shop:8080",
         "🏴 - us01.sh-cloudflare.sbs:8443",
         "🏴 - us2vmess.rnmcnm.com:80",
-        "🏴 - us7-02.890624.xYz:80",
         "🏴 - Us7-03.890624.Xyz:443",
         "🏴 - US7-07.890624.xyz:80",
         "🏴 - usa-sanjose-one.890614.filegear-sg.me:443"
@@ -2131,6 +2140,23 @@
     },
     {
       "method": "chacha20-ietf-poly1305",
+      "password": "1RWwXhwfAB5gAEozU4G2Pg",
+      "server": "45.87.175.188",
+      "server_port": 8080,
+      "tag": "🇺🇸 - 45.87.175.188:8080",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "password": "1RWwXhwfAB5gAEozU4G2Pg",
+      "server": "45.87.175.199",
+      "server_port": 8080,
+      "tag": "🇺🇸 - 45.87.175.199:8080",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
       "network": "tcp",
       "password": "f8f7aCzcPKbsF8p3",
       "server": "64.74.163.130",
@@ -2176,15 +2202,6 @@
       "type": "shadowsocks"
     },
     {
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp",
-      "password": "4a2rfixophdjffa8KVA4Aa",
-      "server": "beesyar.org",
-      "server_port": 8080,
-      "tag": "🇺🇸 - beesyar.org:8080",
-      "type": "shadowsocks"
-    },
-    {
       "network": "tcp",
       "security": "auto",
       "server": "irvideo.cfd",
@@ -2202,14 +2219,6 @@
       },
       "type": "vmess",
       "uuid": "e537f2f5-2a0c-4f59-92c9-832ca6433bf3"
-    },
-    {
-      "method": "chacha20-ietf-poly1305",
-      "password": "1RWwXhwfAB5gAEozU4G2Pg",
-      "server": "45.87.175.188",
-      "server_port": 8080,
-      "tag": "🇺🇸 US 11",
-      "type": "shadowsocks"
     },
     {
       "method": "chacha20-ietf-poly1305",
@@ -2241,15 +2250,6 @@
     {
       "method": "chacha20-ietf-poly1305",
       "network": "tcp",
-      "password": "QCXDxuDlTTMD7jtgHUjIoj",
-      "server": "45.158.171.146",
-      "server_port": 8080,
-      "tag": "🇻🇪 - 45.158.171.146:8080",
-      "type": "shadowsocks"
-    },
-    {
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp",
       "password": "1RWwXhwfAB5gAEozU4G2Pg",
       "server": "45.158.171.151",
       "server_port": 8080,
@@ -2263,6 +2263,15 @@
       "server": "45.158.171.66",
       "server_port": 8080,
       "tag": "🇻🇪 - 45.158.171.66:8080",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "password": "4a2rfixophdjffa8KVA4Aa",
+      "server": "beesyar.org",
+      "server_port": 8080,
+      "tag": "🇻🇪 - beesyar.org:8080",
       "type": "shadowsocks"
     },
     {
@@ -3027,25 +3036,6 @@
       },
       "type": "vmess",
       "uuid": "7f8a1bb9-bee0-40a8-f908-21a65da0f3cc"
-    },
-    {
-      "network": "tcp",
-      "security": "auto",
-      "server": "us7-02.890624.xYz",
-      "server_port": 80,
-      "tag": "🏴 - us7-02.890624.xYz:80",
-      "tls": {
-        "server_name": "RELAY-104.21.96.1-6032 | 6.086MB"
-      },
-      "transport": {
-        "headers": {
-          "Host": "us7-02.890624.xYz"
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "uuid": "4d04b30c-ef7b-4a07-8f9e-f581ec171f8a"
     },
     {
       "network": "tcp",
