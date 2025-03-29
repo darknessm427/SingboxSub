@@ -117,6 +117,7 @@ def resolve_ip(domain: str) -> str:
         return domain  # Return original domain if resolution fails
 
 def get_ip_info(geoip_reader: Optional[geoip2.database.Reader], ip: str) -> Tuple[str, str]:
+    """Get country code and CDN status for an IP using sing-geoip database"""
     if ip in ["localhost", "private", "unknown"]:
         return (ip, ip)
     
@@ -125,11 +126,15 @@ def get_ip_info(geoip_reader: Optional[geoip2.database.Reader], ip: str) -> Tupl
     
     if geoip_reader and ip.replace('.', '').isdigit():
         try:
-            response = geoip_reader.country(ip)
+            # For sing-geoip, we use the 'city' method instead of 'country'
+            response = geoip_reader.city(ip)
+            
+            # Get country code from response
             country_code = response.country.iso_code.lower() if response.country.iso_code else "unknown"
             
-            if response.country.name and any(
-                cdn_keyword.lower() in response.country.name.lower()
+            # CDN detection - check if the city name contains CDN keywords
+            if response.city.name and any(
+                cdn_keyword.lower() in response.city.name.lower()
                 for cdn_keyword in CDN_CATEGORIES
             ):
                 is_cdn = True
