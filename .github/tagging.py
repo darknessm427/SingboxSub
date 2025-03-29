@@ -166,7 +166,7 @@ def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
         if not server:
             continue
             
-        port = int(proxy.get("server_port", 0).strip())
+        port = proxy.get("server_port", 0)
         ip = resolve_ip(server)
 
         # Skip duplicates
