@@ -144,8 +144,8 @@ def resolve_ip(domain: str) -> str:
     except (socket.gaierror, socket.timeout):
         return domain
 
-def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
-    """Process and tag all proxies using sing-box for GeoIP"""
+def process_proxy_list(proxies: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """Process a list of proxies and return updated list with stats"""
     seen = set()
     results = {
         "total": 0,
@@ -153,17 +153,16 @@ def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
         "cdn_count": 0,
         "countries": {}
     }
+    processed_proxies = []
 
-    if "outbounds" not in config:
-        print("⚠️ No outbounds found in config")
-        return config
-
-    for proxy in config.get("outbounds", []):
+    for proxy in proxies:
         if proxy.get("type") not in PROXY_TYPES:
+            processed_proxies.append(proxy)
             continue
 
         server = proxy.get("server", "").strip()
         if not server:
+            processed_proxies.append(proxy)
             continue
             
         port = proxy.get("server_port", 0)
@@ -190,46 +189,84 @@ def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
             results["cdn_count"] += 1
         results["countries"][country_code] = results["countries"].get(country_code, 0) + 1
 
+        processed_proxies.append(proxy)
+
+    return processed_proxies, results
+
+def process_config(config: Dict[str, Any]]) -> Dict[str, Any]:
+    """Process the entire config file"""
+    if "outbounds" not in config:
+        print("⚠️ No outbounds found in config")
+        return config
+
+    # Process main outbounds
+    main_proxies, main_stats = process_proxy_list(config["outbounds"])
+    
+    # Process selector outbounds if they exist
+    selector_stats = {
+        "total": 0,
+        "duplicates": 0,
+        "cdn_count": 0,
+        "countries": {}
+    }
+    
+    if len(config["outbounds"]) > 1 and "outbounds" in config["outbounds"][1]:
+        selector_proxies, selector_stats = process_proxy_list(config["outbounds"][1]["outbounds"])
+        config["outbounds"][1]["outbounds"] = selector_proxies
+    
+    config["outbounds"] = main_proxies
+    
+    # Combine statistics
+    total_stats = {
+        "total": main_stats["total"] + selector_stats["total"],
+        "duplicates": main_stats["duplicates"] + selector_stats["duplicates"],
+        "cdn_count": main_stats["cdn_count"] + selector_stats["cdn_count"],
+        "countries": {
+            k: main_stats["countries"].get(k, 0) + selector_stats["countries"].get(k, 0)
+            for k in set(main_stats["countries"]) | set(selector_stats["countries"])
+        }
+    }
+    
     # Print statistics
     print(f"\n📊 Processing Results:")
-    print(f"✅ Total proxies: {results['total']}")
-    print(f"🚫 Duplicates removed: {results['duplicates']}")
-    print(f"🏴 CDN Proxies: {results['cdn_count']}")
+    print(f"✅ Total proxies: {total_stats['total']}")
+    print(f"🚫 Duplicates removed: {total_stats['duplicates']}")
+    print(f"🏴 CDN Proxies: {total_stats['cdn_count']}")
     print("🌍 Countries Detected:")
-    for country, count in sorted(results["countries"].items(), key=lambda x: (-x[1], x[0])):
+    for country, count in sorted(total_stats["countries"].items(), key=lambda x: (-x[1], x[0])):
         emoji = COUNTRY_EMOJIS.get(country, "🌐")
         print(f"  {emoji} {country}: {count}")
 
     return config
 
-def sort_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
-    """Sort proxies alphabetically by tag"""
+def sort_proxies(config: Dict[str, Any]]) -> Dict[str, Any]:
+    """Sort proxies alphabetically by tag in both main and selector outbounds"""
     if "outbounds" not in config or len(config["outbounds"]) < 2:
         return config
     
-    # Separate proxies from other outbounds
-    proxies: List[Dict[str, Any]] = []
-    others: List[Dict[str, Any]] = []
-    
+    # Sort main outbounds
+    proxies = []
+    others = []
     for outbound in config["outbounds"]:
         if outbound.get("type") in PROXY_TYPES:
             proxies.append(outbound)
         else:
             others.append(outbound)
+    config["outbounds"] = others + sorted(proxies, key=lambda x: x.get("tag", "").lower())
     
-    # Sort proxies by tag
-    proxies_sorted = sorted(proxies, key=lambda x: x.get("tag", "").lower())
+    # Sort selector outbounds if they exist
+    if len(config["outbounds"]) > 1 and "outbounds" in config["outbounds"][1]:
+        selector = config["outbounds"][1]
+        selector["outbounds"] = sorted(selector["outbounds"], key=lambda x: x.get("tag", "").lower())
     
-    # Rebuild outbounds
-    config["outbounds"] = others + proxies_sorted
     return config
 
-def main() -> None:  # Added return type hint
+def main() -> None:
     print("🚀 Starting proxy processor...")
-
+    
     # Load config
     try:
-        with open(CONFIG_PATH, "r", encoding='utf-8') as f:  # Added encoding
+        with open(CONFIG_PATH, "r", encoding='utf-8') as f:
             config = json.load(f)
     except FileNotFoundError:
         print(f"❌ Config file not found: {CONFIG_PATH}")
@@ -241,15 +278,14 @@ def main() -> None:  # Added return type hint
         print(f"❌ Failed to load config: {e}")
         return
     
-    # Process proxies
-    config = process_proxies(config)
+    # Process and sort proxies
+    config = process_config(config)
     config = sort_proxies(config)
     
     # Save config
     try:
-        
-        with open(BACKUP_CONFIG, "w", encoding='utf-8') as f:  # Added encoding
-            json.dump(config, f, indent=2, ensure_ascii=False)  # Added ensure_ascii=False for emojis
+        with open(BACKUP_CONFIG, "w", encoding='utf-8') as f:
+            json.dump(config, f, indent=2, ensure_ascii=False)
         with open(CONFIG_PATH, "w", encoding='utf-8') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
         print(f"\n💾 Config saved! Backup: {BACKUP_CONFIG}")
