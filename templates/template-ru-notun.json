@@ -46,7 +46,16 @@
       "detour": "warp",
       "peers": [
         {
-          "address": "engage.cloudflareclient.com",
+          "address": "2606:4700:d0::a29f:c001",
+          "allowed_ips": [
+            "0.0.0.0/0",
+            "::/0"
+          ],
+          "port": 2408,
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+        },
+        {
+          "address": "162.159.192.1",
           "allowed_ips": [
             "0.0.0.0/0",
             "::/0"
