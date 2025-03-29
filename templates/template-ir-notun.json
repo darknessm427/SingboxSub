@@ -74,7 +74,12 @@
             "::/0"
           ],
           "port": 500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+          "reserved": [
+            44,
+            99,
+            74
+          ]
         },
         {
           "address": "162.159.192.1",
@@ -83,15 +88,15 @@
             "::/0"
           ],
           "port": 4500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+          "reserved": [
+            44,
+            99,
+            74
+          ]
         }
       ],
       "private_key": "uEYrTqWYZwNpf9RHdPXMn5ht94o8DyFnI0pWJ7zm+nQ=",
-      "reserved": [
-        44,
-        99,
-        74
-      ],
       "tag": "warp",
       "type": "wireguard",
       "udp_fragment": true
