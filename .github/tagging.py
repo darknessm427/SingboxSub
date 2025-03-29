@@ -161,7 +161,7 @@ def process_proxies(config: Dict[str, Any], geoip_reader: Optional[geoip2.databa
         if not server:  # Skip if server is empty
             continue
             
-        port = str(proxy.get("port", proxy.get("server_port", "0")).strip()  # Default to "0" if port not found
+        port = str(proxy.get("port", proxy.get("server_port", "0")).strip())  # Default to "0" if port not found
         ip = resolve_ip(server)
 
         # Skip duplicates
