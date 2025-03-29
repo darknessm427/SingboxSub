@@ -231,6 +231,36 @@ def is_domain(address):
     except socket.error:
         return True
 
+def sort_proxies(config):
+    """Sort proxies alphabetically by tag and organize in outbounds[1].outbounds"""
+    if len(config.get("outbounds", [])) < 2:
+        return config
+    
+    # Extract all proxy outbounds (excluding the first two special entries)
+    proxies = [outbound for outbound in config["outbounds"][2:] 
+               if outbound["type"] in ("vmess", "trojan", "shadowsocks", "vless", "hysteria", "hysteria2")]
+    
+    # Sort proxies by their tag
+    proxies_sorted = sorted(proxies, key=lambda x: x.get("tag", "").lower())
+    
+    # Rebuild outbounds structure:
+    # 1. Keep original first outbound (usually direct/dns)
+    # 2. Create selector outbound with sorted tags
+    # 3. Append sorted proxies
+    new_outbounds = [
+        config["outbounds"][0],  # Preserve first outbound (e.g., "direct")
+        {
+            "type": "selector",
+            "tag": "proxy-selector",
+            "outbounds": [p["tag"] for p in proxies_sorted],
+            "default": proxies_sorted[0]["tag"] if proxies_sorted else ""
+        },
+        *proxies_sorted
+    ]
+    
+    config["outbounds"] = new_outbounds
+    return config
+
 def main():
     print("🚀 Starting proxy tagging process...")
     
@@ -249,6 +279,9 @@ def main():
     
     # Process proxies
     updated_config = process_proxies(config, geoip_reader)
+
+    # Sort and reorganize proxies
+    updated_config = sort_proxies(updated_config)
     
     # Backup and save
     try:
