@@ -154,7 +154,7 @@ def process_proxies(config: Dict, geoip_reader) -> Dict:
             continue
 
         server = proxy.get("server", "").strip()
-        port = str(proxy.get("port", proxy.get("server_port", "")).strip()
+        port = str(proxy.get("port", proxy.get("server_port", "")).strip())
         ip = resolve_ip(server)
 
         # Skip duplicates
