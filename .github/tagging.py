@@ -11,14 +11,15 @@ This script processes proxy configurations by:
 
 import json
 import socket
-import geoip2.database
 import os
+import subprocess
 from typing import Optional, Dict, Set, Tuple, Any, List
 
 # Configuration
 CONFIG_PATH = "final.json"
 BACKUP_CONFIG = "final_backup.json"
 GEOIP_DB_PATH = ".github/geoip.db"
+SING_BOX_PATH = "sing-box"  # or full path if not in PATH
 TIMEOUT = 10
 
 PROXY_TYPES = (
@@ -91,20 +92,47 @@ COUNTRY_EMOJIS = {
     "unknown": "🌐", "local": "🏠", "private": "🔒"
 }
 
-def load_geoip_reader() -> Optional[geoip2.database.Reader]:
-    """Load GeoIP reader with validation"""
+def lookup_with_singbox(ip: str) -> Tuple[str, str]:
+    """Lookup IP info using sing-box binary"""
+    if ip in ["localhost", "private", "unknown"]:
+        return (ip, ip)
+    
     try:
-        if not os.path.exists(GEOIP_DB_PATH):
-            print("❌ GeoIP database not found")
-            return None
-        return geoip2.database.Reader(GEOIP_DB_PATH)
+        result = subprocess.run(
+            [SING_BOX_PATH, "geoip", "-f", GEOIP_DB_PATH, "lookup", ip],
+            capture_output=True,
+            text=True,
+            timeout=TIMEOUT
+        )
+        
+        if result.returncode != 0:
+            print(f"⚠️ sing-box lookup failed for {ip}: {result.stderr}")
+            return ("unknown", "unknown")
+        
+        output = result.stdout.strip().lower()
+        
+        # Check for CDN matches first
+        is_cdn = any(cdn in output for cdn in CDN_CATEGORIES)
+        if is_cdn:
+            return ("cdn", "cdn")
+        
+        # Try to extract country code (last 2-letter code in output)
+        for code in COUNTRY_EMOJIS:
+            if f" {code}" in output or output.endswith(code):
+                return (code, code)
+        
+        return ("unknown", "unknown")
+        
+    except subprocess.TimeoutExpired:
+        print(f"⚠️ sing-box lookup timed out for {ip}")
+        return ("unknown", "unknown")
     except Exception as e:
-        print(f"❌ GeoIP DB error: {e}")
-        return None
+        print(f"⚠️ Error running sing-box for {ip}: {str(e)}")
+        return ("unknown", "unknown")
 
 def resolve_ip(domain: str) -> str:
     """Resolve domain to IP with special cases"""
-    if not domain:  # check for empty domain
+    if not domain:
         return "unknown"
     domain = domain.strip()
     if domain.lower() in ["localhost", "127.0.0.1"]:
@@ -114,38 +142,10 @@ def resolve_ip(domain: str) -> str:
     try:
         return socket.gethostbyname(domain)
     except (socket.gaierror, socket.timeout):
-        return domain  # Return original domain if resolution fails
+        return domain
 
-def get_ip_info(geoip_reader: Optional[geoip2.database.Reader], ip: str) -> Tuple[str, str]:
-    """Get country code and CDN status for an IP using sing-geoip database"""
-    if ip in ["localhost", "private", "unknown"]:
-        return (ip, ip)
-    
-    country_code = "unknown"
-    is_cdn = False
-    
-    if geoip_reader and ip.replace('.', '').isdigit():
-        try:
-            # For sing-geoip, we use the 'city' method instead of 'country'
-            response = geoip_reader.city(ip)
-            
-            # Get country code from response
-            country_code = response.country.iso_code.lower() if response.country.iso_code else "unknown"
-            
-            # CDN detection - check if the city name contains CDN keywords
-            if response.city.name and any(
-                cdn_keyword.lower() in response.city.name.lower()
-                for cdn_keyword in CDN_CATEGORIES
-            ):
-                is_cdn = True
-                
-        except Exception as e:
-            print(f"⚠️ GeoIP lookup failed for {ip}: {str(e)}")
-    
-    return ("cdn" if is_cdn else country_code, country_code)
-
-def process_proxies(config: Dict[str, Any], geoip_reader: Optional[geoip2.database.Reader]) -> Dict[str, Any]:
-    """Process and tag all proxies"""
+def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
+    """Process and tag all proxies using sing-box for GeoIP"""
     seen = set()
     results = {
         "total": 0,
@@ -154,7 +154,7 @@ def process_proxies(config: Dict[str, Any], geoip_reader: Optional[geoip2.databa
         "countries": {}
     }
 
-    if "outbounds" not in config:  # check for outbounds key
+    if "outbounds" not in config:
         print("⚠️ No outbounds found in config")
         return config
 
@@ -163,10 +163,10 @@ def process_proxies(config: Dict[str, Any], geoip_reader: Optional[geoip2.databa
             continue
 
         server = proxy.get("server", "").strip()
-        if not server:  # Skip if server is empty
+        if not server:
             continue
             
-        port = str(proxy.get("server_port")).strip()
+        port = int(proxy.get("server_port", 0).strip())
         ip = resolve_ip(server)
 
         # Skip duplicates
@@ -177,12 +177,11 @@ def process_proxies(config: Dict[str, Any], geoip_reader: Optional[geoip2.databa
         seen.add(proxy_key)
 
         # Get IP info
-        ip_category, country_code = get_ip_info(geoip_reader, ip)
+        ip_category, country_code = lookup_with_singbox(ip)
         
         # Get appropriate emoji
         emoji = COUNTRY_EMOJIS.get(ip_category, COUNTRY_EMOJIS["unknown"])
         
-        # Update tag (format: "🌐 - 103.104.247.47:8080")
         proxy["tag"] = f"{emoji} - {server}:{port}"
         
         # Update stats
