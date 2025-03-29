@@ -193,7 +193,7 @@ def process_proxy_list(proxies: List[Dict[str, Any]]) -> Tuple[List[Dict[str, An
 
     return processed_proxies, results
 
-def process_config(config: Dict[str, Any]]) -> Dict[str, Any]:
+def process_config(config: Dict[str, Any]) -> Dict[str, Any]:
     """Process the entire config file"""
     if "outbounds" not in config:
         print("⚠️ No outbounds found in config")
@@ -239,7 +239,7 @@ def process_config(config: Dict[str, Any]]) -> Dict[str, Any]:
 
     return config
 
-def sort_proxies(config: Dict[str, Any]]) -> Dict[str, Any]:
+def sort_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
     """Sort proxies alphabetically by tag in both main and selector outbounds"""
     if "outbounds" not in config or len(config["outbounds"]) < 2:
         return config
