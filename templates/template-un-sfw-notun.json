@@ -280,6 +280,7 @@
           "geosite-nsfw",
           "geosite-phishing"
         ]
+      }
     ]
   }
 }
