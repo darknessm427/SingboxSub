@@ -226,12 +226,7 @@ def sort_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
 
 def main() -> None:  # Added return type hint
     print("🚀 Starting proxy processor...")
-    
-    # Load GeoIP database
-    geoip_reader = load_geoip_reader()
-    if not geoip_reader:
-        print("⚠️ Proceeding without GeoIP database - all proxies will use 🌐 emoji")
-    
+
     # Load config
     try:
         with open(CONFIG_PATH, "r", encoding='utf-8') as f:  # Added encoding
@@ -247,7 +242,7 @@ def main() -> None:  # Added return type hint
         return
     
     # Process proxies
-    config = process_proxies(config, geoip_reader)
+    config = process_proxies(config)
     config = sort_proxies(config)
     
     # Save config
