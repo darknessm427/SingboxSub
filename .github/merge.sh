@@ -6,8 +6,8 @@ local output_file="$2"
 
     jq -S --slurpfile final final.json '
         ($final[0].outbounds) as $final_outbounds |
-        $final_outbounds[1].outbounds as $to_append |
-        ($final_outbounds | del(.[0, 1])) as $filtered_final_outbounds |
+        $final_outbounds[0].outbounds as $to_append |
+        ($final_outbounds | del(.[0])) as $filtered_final_outbounds |
         . |
         .outbounds[2].outbounds += $to_append |
         .outbounds[1].outbounds += $to_append |
