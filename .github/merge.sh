@@ -33,6 +33,10 @@ base_configs=(
     "ru-sfw"
     "ru-notun"
     "ru-sfw-notun"
+    "un"
+    "un-sfw"
+    "un-notun"
+    "un-sfw-notun"
 )
 
 success_count=0
