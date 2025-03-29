@@ -196,9 +196,10 @@ def process_proxies(config: Dict[str, Any]) -> Dict[str, Any]:
 
     # Add all proxy tags to outbounds[1].outbounds if it exists
     if len(config["outbounds"]) > 1 and "outbounds" in config["outbounds"][1]:
-        # Clear existing outbounds to avoid duplicates
-        config["outbounds"][1]["outbounds"] = proxy_tags
-        print(f"\n🔗 Added {len(proxy_tags)} proxy tags to outbounds[1].outbounds")
+        # Sort the proxy_tags alphabetically before adding them
+        proxy_tags_sorted = sorted(proxy_tags, key=lambda x: x.lower())
+        config["outbounds"][1]["outbounds"] = proxy_tags_sorted
+        print(f"\n🔗 Added {len(proxy_tags_sorted)} proxy tags to outbounds[1].outbounds (sorted alphabetically)")
 
     # Print statistics
     print(f"\n📊 Processing Results:")
