@@ -37,69 +37,6 @@
     ],
     "strategy": "prefer_ipv6"
   },
-  "endpoints": [
-    {
-      "address": [
-        "2606:4700:110::2/128",
-        "172.16.0.2/32"
-      ],
-      "detour": "warp",
-      "peers": [
-        {
-          "address": "2606:4700:d0::a29f:c001",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 2408,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "162.159.192.1",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 2408,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        }
-      ],
-      "private_key": "0PglRlh8JGHpEaPFTEhwi5ij6jZy8LbFSbygDXr2xGo=",
-      "tag": "gool",
-      "type": "wireguard"
-    },
-    {
-      "address": [
-        "2606:4700:110::3/128",
-        "172.16.0.3/32"
-      ],
-      "connect_timeout": "10s",
-      "peers": [
-        {
-          "address": "2606:4700:d0::a29f:c001",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        },
-        {
-          "address": "162.159.192.1",
-          "allowed_ips": [
-            "0.0.0.0/0",
-            "::/0"
-          ],
-          "port": 4500,
-          "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-        }
-      ],
-      "private_key": "cH46eHsKq++cImKwb7CLTAkPjiHFJ68Kpbwa6BTCA3U=",
-      "tag": "warp",
-      "type": "wireguard",
-      "udp_fragment": true
-    }
-  ],
   "experimental": {
     "cache_file": {
       "enabled": true,
@@ -150,8 +87,6 @@
       "outbounds": [
         "auto",
         "manual",
-        "gool",
-        "warp",
         "direct"
       ],
       "tag": "default",
