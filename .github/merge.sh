@@ -4,7 +4,7 @@ process_json() {
 local input_file="$1"
 local output_file="$2"
 
-    jq -S --slurpfile final final.json '
+    jq -Sc --slurpfile final final.json '
         ($final[0].outbounds) as $final_outbounds |
         $final_outbounds[1].outbounds as $to_append |
         ($final_outbounds | del(.[0, 1])) as $filtered_final_outbounds |
