@@ -258,10 +258,10 @@ def main() -> None:  # Added return type hint
     
     # Save config
     try:
-        with open(BACKUP_CONFIG, "w", encoding='utf-8') as f:  # Added encoding
-            json.dump(config, f, indent=2, ensure_ascii=False)  # Added ensure_ascii=False for emojis
+        with open(BACKUP_CONFIG, "w", encoding='utf-8') as f:
+            json.dump(config, f, separators=(',', ':'), ensure_ascii=False)
         with open(CONFIG_PATH, "w", encoding='utf-8') as f:
-            json.dump(config, f, indent=2, ensure_ascii=False)
+            json.dump(config, f, separators=(',', ':'), ensure_ascii=False)
         print(f"\n💾 Config saved! Backup: {BACKUP_CONFIG}")
     except Exception as e:
         print(f"❌ Failed to save config: {e}")
