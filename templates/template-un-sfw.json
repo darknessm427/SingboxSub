@@ -79,7 +79,7 @@
   "ntp": {
     "detour": "direct",
     "enabled": true,
-    "server": "2.pool.ntp.org"
+    "server": "time.android.com"
   },
   "outbounds": [
     {
