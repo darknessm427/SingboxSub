@@ -35,7 +35,7 @@
         "tag": "fakeip"
       }
     ],
-    "strategy": "prefer_ipv6"
+    "strategy": "prefer_ipv4"
   },
   "experimental": {
     "cache_file": {
@@ -45,8 +45,9 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
-      "external_ui": "yacd",
-      "external_ui_download_detour": "direct"
+      "external_ui": "xd",
+      "external_ui_download_detour": "direct",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
     }
   },
   "inbounds": [
@@ -59,11 +60,6 @@
   ],
   "log": {
     "level": "fatal"
-  },
-  "ntp": {
-    "detour": "direct",
-    "enabled": true,
-    "server": "time.android.com"
   },
   "outbounds": [
     {
