@@ -35,7 +35,7 @@
         "tag": "fakeip"
       }
     ],
-    "strategy": "prefer_ipv4"
+    "strategy": "prefer_ipv6"
   },
   "experimental": {
     "cache_file": {
@@ -76,7 +76,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://chat.deepseek.com"
+      "url": "https://www.cloudflare.com/cdn-cgi/trace"
     },
     {
       "interrupt_exist_connections": true,
