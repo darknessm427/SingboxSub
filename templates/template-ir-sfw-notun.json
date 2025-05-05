@@ -76,7 +76,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://www.cloudflare.com/cdn-cgi/trace"
+      "url": "https://chat.deepseek.com"
     },
     {
       "interrupt_exist_connections": true,
