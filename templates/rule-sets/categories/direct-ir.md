@@ -1,6 +1,5 @@
 geoip-ir
 geosite-ir
-
 geosite-apple
 geosite-category-dev
 geosite-category-games

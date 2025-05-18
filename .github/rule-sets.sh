@@ -59,7 +59,7 @@ for i in $OUTPUT_DIR/proxy-*; do
 done
 
 # Recompile
-for i in "$OUTPUT_DIR/*.json"; do
+for i in "$OUTPUT_DIR"/*.json; do
 	basename=$(basename "$i" .json)
 	"$SING_BOX_PATH" rule-set compile "$i" -o "$OUTPUT_DIR/$basename.srs"
 done
