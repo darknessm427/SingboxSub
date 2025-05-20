@@ -220,6 +220,7 @@
           ],
           "domain_suffix": [
             ".example",
+            ".internal",
             ".invalid",
             ".lan",
             ".local",

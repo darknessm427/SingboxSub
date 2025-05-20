@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "type": "logical",
+      "mode": "or",
+      "rules": [
+        {
+          "domain": "example.org"
+        },
+        {
+          "domain_suffix": "example.org"
+        }
+      ]
+    }
+  ]
+}
