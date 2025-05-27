@@ -16,6 +16,7 @@
             "ntp-wwv.nist.gov",
             "ntp.aliyun.com",
             "ntp.tencent.com",
+            "ntp.ubuntu.com",
             "ntp0.ntp-servers.net",
             "ntp1.aliyun.com",
             "ntp1.ntp-servers.net",
@@ -54,11 +55,13 @@
             "time.amazonaws.cn",
             "time.apple.com",
             "time.aws.com",
+            "time.cloudflare.com",
             "time.euro.apple.com",
             "time.facebook.com",
             "time.google.com",
             "time.izatcloud.net",
             "time.nist.gov",
+            "time.windows.com",
             "time.xtracloud.net",
             "time1.facebook.com",
             "time1.google.com",
@@ -116,9 +119,7 @@
             "ntp3.v6.mfeed.ad.jp",
             "pool.ntp.org",
             "s2csntp.miz.nao.ac.jp",
-            "time.cloudflare.com",
-            "time.nrc.ca",
-            "time.windows.com"
+            "time.nrc.ca"
           ]
         },
         {
@@ -137,6 +138,8 @@
             "nperf.com",
             "ookla.com",
             "ooklaserver.net",
+            "open.cachefly.net",
+            "openspeedtest.com",
             "pingtest.net",
             "speed.cloudflare.com",
             "speed.dler.io",
