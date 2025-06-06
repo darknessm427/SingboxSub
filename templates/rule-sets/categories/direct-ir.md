@@ -21,6 +21,7 @@ geosite-paypal
 geosite-playstation
 geosite-samsung
 geosite-sony
+geosite-spotify
 geosite-teamviewer
 geosite-visa
 geosite-whatsapp
