@@ -21,11 +21,11 @@
     ],
     "servers": [
       {
-        "address": "https://1.1.1.1/dns-query",
+        "address": "https://1.1.1.2/dns-query",
         "tag": "remote"
       },
       {
-        "address": "tls://free.shecan.ir",
+        "address": "https://pro.shecan.ir/dns-query",
         "address_resolver": "bootstrap",
         "detour": "direct",
         "tag": "local"
